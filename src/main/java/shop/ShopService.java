@@ -1,7 +1,10 @@
 package shop;
 
 import shop.order.OrderRepo;
+import shop.product.Product;
 import shop.product.ProductRepo;
+
+import java.util.List;
 
 public class ShopService {
 
@@ -12,6 +15,12 @@ public class ShopService {
         this.productRepo = productRepo;
         this.orderRepo = orderRepo;
     }
+    public Product getProduct(int id){
+        return productRepo.getProduct(id);
+    }
 
+    public List<Product> listProducts(){
+        return productRepo.productList();
+    }
 
 }
